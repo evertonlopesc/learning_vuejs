@@ -38,6 +38,10 @@
           </li>
         </ol>
       </div>
+      <div>
+        <p>{{ message }}</p>
+        <input v-model="message">
+      </div>
       <button v-on:click="insertList">Insert list</button>
     </div>
 
@@ -90,11 +94,12 @@
             { text: 'Learn JavaScript' },
             { text: 'Learn Vue' },
             { text: 'Build something awesome' }
-          ]
+          ],
+          message: 'Testing'
         },
         methods: {
           insertList: function () {
-            this.todos.push({ text: "Testing" })
+            this.todos.push({ text: this.message })
           }
         }
       })
