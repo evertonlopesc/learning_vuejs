@@ -11,48 +11,41 @@
       Learning VueJS
     </h1>
     <p>version: 2.x</p>
+
+    <div class="m-5">
+      <nav>
+        <a href="./todo.html">TODO List</a>
+      </nav>
+    </div><br>
   
-    <div id="app">
-      {{ message }}
-    </div>
-
-    <div id="app-2">
-      <span v-bind:title="message">
-        Hover your mouse over me for a few seconds
-        to see my dynamically bound title!
-      </span>
-    </div>
-
-    <div id="app-3">
-      <div>
-        <span v-if="seen">Now you see me</span>
+    <div>
+      <div id="app">
+        {{ message }}
       </div>
-      <button v-on:click="seenotsee">See / Not see</button>
-    </div>
 
-    <div id="app-4">
-      <div>
-        <ol>
-          <li v-for="todo in todos">
-            {{ todo.text }}
-          </li>
-        </ol>
+      <div id="app-2">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds
+          to see my dynamically bound title!
+        </span>
       </div>
-      <div>
+
+      <div id="app-3">
+        <div>
+          <span v-if="seen">Now you see me</span>
+        </div>
+        <button v-on:click="seenotsee">See / Not see</button>
+      </div>
+
+      <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+      </div>
+
+      <div id="app-6">
         <p>{{ message }}</p>
         <input v-model="message">
       </div>
-      <button v-on:click="insertList">Insert list</button>
-    </div>
-
-    <div id="app-5">
-      <p>{{ message }}</p>
-      <button v-on:click="reverseMessage">Reverse Message</button>
-    </div>
-
-    <div id="app-6">
-      <p>{{ message }}</p>
-      <input v-model="message">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -83,23 +76,6 @@
             } else {
               this.seen = self.seen = false
             }
-          }
-        }
-      })
-
-      var app4 = new Vue({
-        el: '#app-4',
-        data: {
-          todos: [
-            { text: 'Learn JavaScript' },
-            { text: 'Learn Vue' },
-            { text: 'Build something awesome' }
-          ],
-          message: 'Testing'
-        },
-        methods: {
-          insertList: function () {
-            this.todos.push({ text: this.message })
           }
         }
       })
