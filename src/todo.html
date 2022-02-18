@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Vue.JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../dist/output.css" rel="stylesheet">
+  </head>
+  <body class="max-w-6xl m-auto justify-center bg-green-600">
+    <div class="w-3/7 h-screen bg-green-800 text-white text-center">
+      <div class="">
+        <div class="">
+          <h1 class="text-6xl p-3">TODO List</h1>
+          <p class="">vue.js version: 2.x</p>
+          <div class="flex justify-around bg-white my-3">
+            <a class="bg-white text-green-500 py-1 px-4 text-lg hover:bg-green-400 hover:text-white" href="./index.html">Home</a>
+          </div>
+        </div>
+        <div class="space-y-5" id="app-4">
+          <div>
+            <input class="text-black rounded-full p-2" v-model="message">
+          </div>
+          <button class="bg-white py-1 px-4 text-green-600 rounded-md hover:bg-green-700 hover:text-white" v-on:click="insertList">Insert list</button>
+          <div>
+            <ol>
+              <li v-for="todo in todos">
+                {{ todo.text }}
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      var app4 = new Vue({
+        el: '#app-4',
+        data: {
+          todos: [
+            { text: 'Learn JavaScript' },
+            { text: 'Learn Vue' },
+            { text: 'Build something awesome' }
+          ],
+          message: 'Testing'
+        },
+        methods: {
+          insertList: function () {
+            this.todos.push({ text: this.message })
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
