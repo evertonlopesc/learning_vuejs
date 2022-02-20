@@ -59,13 +59,29 @@
         foo: 'bar'
       }
 
-      Object.freeze(obj)
+      // Object.freeze(obj)
 
       new Vue({
         el: '#app',
-        data: obj
+        data: obj,
+        created: function () {
+          // `this` points to the vm instance
+          console.log('foo is: ' + this.foo)
+        },
+        updated: function () {
+          console.log('foo now is: ' + this.foo)
+        },
       })
 
+      var asd = new Vue({
+        data: {
+          a: 1
+        },
+        created: function () {
+          // `this` points to the vm instance
+          console.log('a is: ' + this.a)
+        }
+      })
     </script>
   </body>
 </html>
