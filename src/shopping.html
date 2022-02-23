@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Vue.JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../dist/output.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="m-auto justify-center bg-green-800">
+      <!-- HEADER -->
+      <div class="text-center text-white">
+        <nav class="">
+          <h1 class="text-6xl p-3">Learning VueJS</h1>
+          <p class="">vue.js version: 2.x</p>
+          <div class="bg-green-500">
+            <div class="max-w-6xl m-auto mt-5 justify-center">
+              <div class="flex flex-wrap justify-around mt-5 p-2">
+                <a class="bg-white text-green-500 w-32 py-1 text-lg rounded-md hover:bg-green-400 hover:text-white" 
+                   href="./index.html"
+                >
+                  Home
+                </a>
+                <a class="bg-white text-green-500 w-32 py-1 text-lg rounded-md hover:bg-green-400 hover:text-white" 
+                   href="./introduction.html"
+                >
+                  Introduction
+                </a>
+                <a class="bg-white text-green-500 w-32 py-1 text-lg rounded-md hover:bg-green-400 hover:text-white" 
+                   href="./components.html"
+                >
+                  Vue Instance
+                </a>
+                <a class="bg-white text-green-500 w-32 py-1 text-lg rounded-md hover:bg-green-400 hover:text-white" 
+                   href="./todo.html"
+                >
+                  To-do
+                </a>
+                <a class="bg-white text-green-500 w-32 py-1 text-lg rounded-md hover:bg-green-400 hover:text-white" 
+                   href="./shopping.html"
+                >
+                  Shopping
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="max-w-6xl m-auto mt-5 justify-center">
+        <!-- BODY -->
+        <div class="w-3/7 bg-white text-center">
+          <h2 class="text-3xl">Shopping</h2>
+          <div id="shopping" class="space-y-5">
+            <h2>{{ header }}</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      var shopping = new Vue ({
+        el: '#shopping',
+        data: {
+          header: 'Mini Kalzone',
+          data: {},
+        }
+      })
+    </script>
+  </body>
+</html>
