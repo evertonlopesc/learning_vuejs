@@ -41,14 +41,33 @@
 
     <main>
       <div class="max-w-6xl m-auto mt-5 justify-center">
-        <!-- BODY -->
         <div class="w-3/7 bg-white text-center">
           <h2 class="text-3xl">Shopping</h2>
           <div id="shopping" class="space-y-5">
             <h2>{{ header }}</h2>
             <p>I love Mini Kalzone (project to study)</p>
-            <div class="w-48">
-              <img v-bind:src="image">
+            <div class="flex justify-center space-x-10">
+              <div class="w-24 md:w-48 lg:w-64 boder-2 border-red-300">
+                <img v-bind:src="image">
+              </div>
+              <div class="text-2xl border-2 border-red-300 w-64 space-y-2">
+                <p>Menu</p>
+                <hr>
+                <ul class="text-base list-item">
+                  <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+                <ol class="text-base">
+                  <li v-for="item in items" :key="item.productId">{{ item.product }}</li>
+                </ol>
+              </div>
+            </div>
+            <div>
+            <button v-on:click="cleanToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white">Clean</button>
+            <button v-on:click="lessToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white"> - Cart</button>
+            <button v-on:click="addToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white">+ Cart</button>
+            </div>
+            <div class="flex justify-center">
+              <p class="w-32 text-black border-2 border-green-400 rounded-full p-2">Cart: {{ cart }}</p>
             </div>
           </div>
         </div>

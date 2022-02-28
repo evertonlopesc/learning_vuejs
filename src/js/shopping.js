@@ -34,6 +34,11 @@ var shopping = new Vue ({
     addToCart() {
       this.cart += 1
     },
+    lessToCart() {
+      if (this.cart > 0) {
+        this.cart -= 1
+      }
+    },
     cleanToCart() {
       this.cart = 0
     },
