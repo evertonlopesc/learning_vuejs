@@ -56,9 +56,11 @@
                 <ul class="text-base list-item">
                   <li v-for="detail in details">{{ detail }}</li>
                 </ul>
-                <ol class="text-base">
-                  <li v-for="item in items" :key="item.productId">{{ item.product }}</li>
-                </ol>
+                <div v-for="item in items" :key="item.prodId">
+                  <p @mouseover="updateProduct(item.productImage)">
+                    {{ item.product }}
+                  </p>
+                </div>
               </div>
             </div>
             <div>
