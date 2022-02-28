@@ -42,5 +42,8 @@ var shopping = new Vue ({
     cleanToCart() {
       this.cart = 0
     },
+    updateProduct(productImage) {
+      this.image = productImage
+    },
   },
 })
