@@ -13,35 +13,34 @@
 
     <main>
       <div class="max-w-6xl m-auto mt-5 justify-center">
-        <div class="w-3/7 bg-white text-center">
-          <h2 class="text-3xl">Shopping</h2>
-          <div id="shopping" class="space-y-5">
-            <h2>{{ header }}</h2>
-            <p>I love Mini Kalzone (project to study)</p>
-            <div class="flex justify-center space-x-10">
-              <div class="w-24 md:w-48 lg:w-64 boder-2 border-red-300">
-                <img v-bind:src="image">
-              </div>
-              <div class="text-2xl border-2 border-red-300 w-64 space-y-2">
-                <p>Menu</p>
-                <hr>
-                <ul class="text-base list-item">
-                  <li v-for="detail in details">{{ detail }}</li>
-                </ul>
-                <div v-for="item in items" :key="item.prodId">
-                  <p @mouseover="updateProduct(item.productImage)">
-                    {{ item.product }}
-                  </p>
+        <div class="relative">
+          <div class="w-3/7 bg-white text-center">
+            <h2 class="text-3xl">Shopping</h2>
+            <div id="shopping" class="space-y-5">
+              <h2>{{ title }}</h2>
+              <p>I love Mini Kalzone (project to study)</p>
+              <div class="flex justify-center space-x-10">
+                <div class="w-24 h-24 md:w-48 md:h-48 lg:w-64 lg:h-64 boder-2 border-red-300">
+                  <img v-bind:src="image">
+                </div>
+                <div class="text-2xl border-2 border-red-300 w-64 space-y-2">
+                  <p>Menu</p>
+                  <hr>
+                  <div v-for="item in items" :key="item.prodId">
+                    <p @mouseover="updateProduct(item.productImage)">
+                      {{ item.product }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-            <button @click="cleanToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white">Clean</button>
-            <button @click="lessToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white"> - Cart</button>
-            <button @click="addToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white">+ Cart</button>
-            </div>
-            <div class="flex justify-center">
-              <p class="w-32 text-black border-2 border-green-400 rounded-full p-2">Cart: {{ cart }}</p>
+              <div>
+              <button @click="cleanToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white">Clean</button>
+              <button @click="lessToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white"> - Cart</button>
+              <button @click="addToCart" class="bg-green-500 py-1 px-4 text-white rounded-md hover:bg-green-700 hover:text-white">+ Cart</button>
+              </div>
+              <div class="">
+                <p class="absolute top-0 right-5 w-auto md:w-32 text-black border-2 border-green-400 rounded-full p-2">Cart: {{ cart }}</p>
+              </div>
             </div>
           </div>
         </div>
